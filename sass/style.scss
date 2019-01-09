@@ -16,7 +16,7 @@ h1 {
   font-size: 20px;
   text-transform: uppercase;
   color: rgb(255, 255, 255);
-    text-shadow: 2px 2px 1px #000000;
+  text-shadow: 2px 2px 1px #000000;
 }
 
 .carousel-cell {
@@ -40,6 +40,11 @@ h1 {
     color: rgb(255, 255, 255);
     text-shadow: 2px 2px 4px #000000;
     text-align: center;
+    p {
+      font-size: 0.6em;
+      font-style: italic;
+      font-weight: 300;
+    }
   }
   .rewind {
     position: absolute;
