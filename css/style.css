@@ -1,44 +1,13 @@
-* {
-  box-sizing: border-box;
-}
+* { box-sizing: border-box; }
 
-.container {
-  margin: 0 auto;
-  width: 100%;
-  max-width: 1200px;
-}
+body { background-image: url(/images/beer_background.jpg); background-size: cover; background-position: center top; background-repeat: no-repeat; margin: 0; font-family: "Open Sans", sans-serif; }
 
-body {
-  background-image: url(../images/beer_background.jpg);
-  background-size: cover;
-  background-position: center top;
-  background-repeat: no-repeat;
-  margin: 0;
-  font-family: "Lato";
-}
+h1 { text-align: center; font-size: 20px; text-transform: uppercase; color: white; text-shadow: 2px 2px 1px #000000; }
 
-h1 {
-  text-align: center;
-  font-size: 20px;
-  color: #ebeab0;
-}
+.carousel-cell { width: 100%; /* full width */ min-height: 250px; /* height of carousel */ height: 50vh; margin-right: 10px; background-size: cover; background-position: center; background-repeat: no-repeat; display: -ms-flexbox; display: flex; -ms-flex-pack: center; justify-content: center; -ms-flex-align: center; align-items: center; }
 
-.carousel-cell {
-  width: 100%;
-  /* full width */
-  min-height: 250px;
-  /* height of carousel */
-  height: 50vh;
-  margin-right: 10px;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
+.carousel-cell .container { margin: 0 auto; width: 100%; max-width: 1200px; font-size: 3em; font-weight: 600; text-transform: uppercase; color: white; text-shadow: 2px 2px 4px #000000; text-align: center; }
 
-.carousel-cell .container {
-  font-size: 20px;
-  color: #ebeab0;
-  text-align: left;
-}
+.carousel-cell .rewind { position: absolute; left: 20px; background: rgba(255, 255, 255, 0.6); border-radius: 20%; bottom: 10px; height: 40px; width: auto; cursor: pointer; }
 
-/*# sourceMappingURL=style.css.map */
+.progress-bar { height: 20px; width: 0; background: #bce4f7; }
