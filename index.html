@@ -16,41 +16,59 @@
     <section class="section">
         <h1>- Polish coast - craft breweries. -</h1>
         <!-- Flickity HTML init -->
-        <div class="carousel">
-            <div class="carousel-cell" style="background-image: url(images/szczecin.jpg)">
-                <div class="container">Nowy Browar - Szczecin</div>
-                <img class="rewind" src="images/backward-solid.svg">
-            </div>
-            <div class="carousel-cell" style="background-image: url(images/kolobrzeg.jpg)">
-                <div class="container">Colberg - Kołobrzeg</div>
-                <img class="rewind" src="images/backward-solid.svg">
-            </div>
-            <div class="carousel-cell" style="background-image: url(images/koszalin.jpg)">
-                <div class="container">Minibrowar Kowal - Koszalin</div>
-                <img class="rewind" src="images/backward-solid.svg">
-            </div>
-            <div class="carousel-cell" style="background-image: url(images/portgdynia.jpg)">
-                <div class="container">Browar Port - Gdynia</div>
-                <img class="rewind" src="images/backward-solid.svg">
-            </div>
-            <div class="carousel-cell" style="background-image: url(images/alegdynia.jpg)">
-                <div class="container">Ale brawar - Gdynia</div>
-                <img class="rewind" src="images/backward-solid.svg">
-            </div>
-            <div class="carousel-cell" style="background-image: url(images/bgdans.jpg)">
-                <div class="container">Brovarnia - Gdańsk</div>
-                <img class="rewind" src="images/backward-solid.svg">
-            </div>
-            <div class="carousel-cell" style="background-image: url(images/piwnagdansk.jpg)">
-                <div class="container">Browar Piwna - Gdańsk</div>
-                <img class="rewind" src="images/backward-solid.svg">
-            </div>
-        </div>
+        <div class="carousel"></div>         
         <div class="progress-bar"></div>
     </section>
 
+    <script id="template-image-list" type="x-tmpl-mustache">
+        <div class="carousel-cell" style="background-image: url({{image}})">
+        <div class="container">{{title}}{{{description}}}</div>
+        <img class="rewind" src="images/backward-solid.svg">
+    </script>
+
+    <script>
+        var imagesData = [
+            {
+                image: 'images/szczecin.jpg', 
+                title: 'Nowy Browar',
+                description:'<p>- Szczecin -</p>'
+            },
+            {
+                image: 'images/kolobrzeg.jpg', 
+                title: 'Colberg',
+                description:'<p>- Kołobrzeg -</p>'
+            },
+            {
+                image: 'images/koszalin.jpg', 
+                title: 'Minibrowar Kowal',
+                description:'<p>- Koszalin -</p>'
+            },
+            {
+                image: 'images/portgdynia.jpg', 
+                title: 'Browar Port',
+                description:'<p>- Gdynia -</p>'
+            },
+            {
+                image: 'images/alegdynia.jpg', 
+                title: 'Ale brawar',
+                description:'<p>- Gdynia -</p>'
+            },
+            {
+                image: 'images/bgdans.jpg', 
+                title: 'Brovarnia',
+                description:'<p>- Gdańsk -</p>'
+            },
+            {
+                image: 'images/piwnagdansk.jpg', 
+                title: 'Browar Piwna',
+                description:'<p>- Gdańsk -</p>'
+            }
+        ];
+        </script>
+
     <script src="vendor/flickity.pkgd.min.js"></script>
     <script src="vendor/hash.js"></script>
+    <script src="vendor/mustache.min.js"></script>
     <script src="js/script.js"></script>
 
 </body>

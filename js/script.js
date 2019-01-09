@@ -1,10 +1,13 @@
 'use strict';
 (function () {
-
+  var templateItem = document.getElementById('template-image-list').innerHTML;
   var elem = document.querySelector('.carousel');
-  var rewind = document.querySelectorAll('.rewind');
-  var progressBar = document.querySelector('.progress-bar')
-
+ 
+  Mustache.parse(templateItem);
+  for (var i = 0; i < imagesData.length; i++) {
+    elem.innerHTML += Mustache.render(templateItem, imagesData[i]);
+  }
+  
   var flkty = new Flickity(elem, {
     // options
     cellAlign: 'left',
@@ -14,7 +17,7 @@
     hash: true
   });
 
-  rewind.forEach(function (e) {
+  document.querySelectorAll('.rewind').forEach(function (e) {
     e.addEventListener('click', function () {
       flkty.select(0);
     })
@@ -22,7 +25,7 @@
 
   flkty.on('scroll', function (progress) {
     progress = Math.max(0, Math.min(1, progress));
-    progressBar.style.width = progress * 100 + '%';
+    document.querySelector('.progress-bar').style.width = progress * 100 + '%';
   });
 
 })();
