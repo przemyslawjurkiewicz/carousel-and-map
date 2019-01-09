@@ -2,12 +2,12 @@
 (function () {
   var templateItem = document.getElementById('template-image-list').innerHTML;
   var elem = document.querySelector('.carousel');
- 
+
   Mustache.parse(templateItem);
   for (var i = 0; i < imagesData.length; i++) {
     elem.innerHTML += Mustache.render(templateItem, imagesData[i]);
-  }
-  
+  };
+
   var flkty = new Flickity(elem, {
     // options
     cellAlign: 'left',
@@ -20,7 +20,7 @@
   document.querySelectorAll('.rewind').forEach(function (e) {
     e.addEventListener('click', function () {
       flkty.select(0);
-    })
+    });
   });
 
   flkty.on('scroll', function (progress) {
