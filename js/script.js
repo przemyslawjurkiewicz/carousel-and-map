@@ -1,5 +1,5 @@
 'use strict';
-(function() {
+(function () {
   var templateItem = document.getElementById('template-image-list').innerHTML;
   var elem = document.querySelector('.carousel');
 
@@ -17,26 +17,29 @@
     hash: true
   });
 
-  document.querySelectorAll('.rewind').forEach(function(e) {
-    e.addEventListener('click', function() {
+  document.querySelectorAll('.rewind').forEach(function (e) {
+    e.addEventListener('click', function () {
       flkty.select(0);
     });
   });
 
-  flkty.on('scroll', function(progress) {
+  flkty.on('scroll', function (progress) {
     progress = Math.max(0, Math.min(1, progress));
     document.querySelector('.progress-bar').style.width = progress * 100 + '%';
   });
 
-  window.initMap = function() {
-    var uluru = { lat: 53.423916, lng: 14.549753 };
+  window.initMap = function () {
+    var uluru = imagesData[0].coords;
     var map = new google.maps.Map(document.getElementById('map'), {
-      zoom: 4,
+      zoom: 7,
       center: uluru
     });
-    var marker = new google.maps.Marker({
-      position: uluru,
-      map: map
+
+    imagesData.forEach(function (slide) {
+      var marker = new google.maps.Marker({
+        position: slide.coords,
+        map: map
+      });
     });
   };
 })();
