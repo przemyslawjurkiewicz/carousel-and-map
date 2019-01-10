@@ -36,7 +36,7 @@
     });
 
     imagesData.forEach(function (slide) {
-      var marker = new google.maps.Marker({
+      new google.maps.Marker({
         position: slide.coords,
         map: map
       });
